@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container mt-3 mb-3">
+        <div class="card bg-dark text-light p-3" id="show">
+            <h2>
+                {{ note.title }} | <span class="btn btn-sm bg-success">{{ note.label }}</span>
+            </h2>
+            <p>
+                {{ note.note_text }}
+            </p>
+            <p class="date"> 
+                {{ note.pub_date.strftime("%c") }}                
+            </p>
+            <div>
+                <a class="btn btn-warning" href="/note/{{ note.id }}/edit">Edit</a>
+                <form action="/note/{{ note.id }}/delete" method="POST" style="display: inline;">
+                    <input class="btn btn-danger" type="submit" value="Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

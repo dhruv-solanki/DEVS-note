@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container mt-3 mb-3" id="new">
+        <h2>Create New Note</h2>
+        
+        <form action="/newNote" method="POST">
+            <div class="form-group">
+                <label>Title</label>
+                <input class="form-control" type="text" name="title" placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+                <label>Label</label>
+                <input class="form-control" type="text" name="label" placeholder="Enter Label">
+            </div>
+            <div class="form-group">
+                <label>Note Text</label>
+                <textarea class="form-control" name="note_text" cols="30" rows="5" placeholder="Enter Your Note"></textarea>
+            </div>
+
+            <input class="btn btn-success" type="submit" value="Create">
+        </form>
+    </div>
+
+{% endblock %}

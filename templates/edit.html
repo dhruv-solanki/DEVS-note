@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div id="edit" class="container mt-3 mb-3">
+        <h2>Edit Note : {{ note.title }}</h2>
+        
+        <form action="/note/{{ note.id }}/update" method="POST">
+            <div class="form-group">
+                <label>Title</label>
+                <input class="form-control" type="text" name="title" value="{{ note.title }}">
+            </div>
+            <div class="form-group">
+                <label>Label</label>
+                <input class="form-control" type="text" name="label" value="{{ note.label }}">
+            </div>
+            <div class="form-group">
+                <label>Note Text</label>
+                <textarea class="form-control" name="note_text" cols="30" rows="5">{{ note.note_text }}</textarea>
+            </div>
+
+            <input class="btn btn-warning" type="submit" value="Update">
+        </form>
+    </div>
+
+{% endblock %}

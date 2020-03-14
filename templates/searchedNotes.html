@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container mt-3 mb-3" id="app">
+        <div class="text-center">
+            <form class="form-inline" action="/note/search" method="GET">
+                <input class="form-control mr-sm-2" name="query" type="search" placeholder="{{query}}" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+        </div>
+        <div class="row">
+            {% for note in notes %}
+                <div class="col-md-4 mt-3">
+                    <a href="{{ url_for('showNote', noteID=note.id) }}">
+                        <div class="card bg-dark text-light p-3">
+                            <h5> {{ note.title }} | <span class="btn btn-sm bg-success" >{{ note.label }}</span> </h5>
+                            <p>
+                                {% if note.note_text | length>180 %}
+                                    {{ note.note_text[:165] }}
+                                {% else %}
+                                    {{ note.note_text }}
+                                {% endif %}
+                            </p>
+                            <p class="date">
+                                {{ note.pub_date.strftime("%c") }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
