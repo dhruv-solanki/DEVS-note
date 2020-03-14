@@ -9,10 +9,10 @@ Simple micro website in Flask for note taking task.
 5. Bootstrap 4
 
 ### Routes
-route | details
----------------
-index | shows all the notes
-create | shows new form to create new note
-edit | edit particular note by id
-delete | delete particular note by id
-search | search the notes by query
+| route | details |
+| ------|--------- |
+| index | shows all the notes |
+| create | shows new form to create new note |
+| edit | edit particular note by id |
+| delete | delete particular note by id |
+| search | search the notes by query |
