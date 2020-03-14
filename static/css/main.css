@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#app a {
+    text-decoration: none;
+}
+
+#edit, #new {
+    padding: 2%;
+    background-color: whitesmoke !important;
+}
+
+.card {
+    height: 100%;
+}
+
+.img-card img {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.s-card {
+    background-color: black;
+    padding: 3%;
+    border-radius: 50%;
+    margin: 0 2%;
+}
+
+.social a{
+    text-decoration: none;
+    color: lime;
+}
+
+.date {
+    color: lightgreen;
+}
+
+.bg-dark {
+    background-color: #313131 !important;
+}
+
+#app .card:hover {
+    box-shadow: grey 4px 4px 4px 4px;
+    cursor: pointer;
+}
